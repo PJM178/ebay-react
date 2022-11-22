@@ -21,8 +21,16 @@
 /* Header navigation bar - end */
 
 /* Sign in element - start */
-.signin-container {
+.user-administration-container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-submit-element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 /* Sign in element - end */
