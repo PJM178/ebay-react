@@ -1,0 +1,28 @@
+/* Header navigation bar - start */
+.nav-bar {
+  display: flex;
+  background-color: aliceblue;
+  padding: 0.5rem;
+  align-items: center;
+}
+
+.nav-bar-element {
+  margin-right: 0.5rem;
+}
+
+.nav-bar-signin {
+  display: flex;
+  margin-left: auto;
+}
+
+.nav-bar-signin-element {
+  margin-left: 0.5rem
+}
+/* Header navigation bar - end */
+
+/* Sign in element - start */
+.signin-container {
+  display: flex;
+  justify-content: center;
+}
+/* Sign in element - end */
