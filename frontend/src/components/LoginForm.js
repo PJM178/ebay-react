@@ -1,12 +1,26 @@
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { loginUser } from '../reducers/userReducer'
 
 const LoginForm = () => {
+  const dispatch = useDispatch()
   const navigate = useNavigate()
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  console.log(username)
-  console.log(password)
+
+  const handleLogin = async (e) => {
+    e.preventDefault()
+    const user = {
+      username: username,
+      password: password
+    }
+    dispatch(loginUser(user))
+    setUsername('')
+    setPassword('')
+    navigate('/')
+  }
+
   return (
     <div>
       <div>
@@ -15,7 +29,7 @@ const LoginForm = () => {
       </div>
       <div className="user-administration-container">
         <h2>Sign in</h2>
-        <form>
+        <form onSubmit={handleLogin}>
           <table>
             <tbody>
               <tr>
@@ -51,7 +65,7 @@ const LoginForm = () => {
             </tbody>
           </table>
           <div className="user-submit-element">
-            <button type="button">Submit</button>
+            <button type="submit" id="user-submit-button">Submit</button>
           </div>
         </form>
       </div>

@@ -1,0 +1,11 @@
+POST http://localhost:3003/api/listings
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBldHJpIiwiaWQiOiI2MzgxZGM0NzRiY2UyNTBhNzQyZGVlOWEiLCJpYXQiOjE2Njk0NzAwNzJ9.SfeKB_rLf09OgMjn69ht-cf04NKXqI2i8rLhOPDtVZ0
+
+{
+  "title": "body.title",
+  "category": "electronics",
+  "description": "body.description",
+  "price": 12,
+  "listedBy": 2134
+}

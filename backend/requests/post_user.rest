@@ -1,0 +1,18 @@
+### Register user
+POST http://localhost:3003/api/users
+Content-Type: application/json
+
+{
+  "username": "petri",
+  "name": "Petri Montonen",
+  "password": "testi"
+}
+### Login User
+POST http://localhost:3003/api/login
+Content-Type: application/json
+
+{
+  "username": "petri",
+  "password": "testi"
+}
+
