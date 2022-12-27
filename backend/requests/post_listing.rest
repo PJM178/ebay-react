@@ -1,6 +1,6 @@
 POST http://localhost:3003/api/listings
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBldHJpIiwiaWQiOiI2MzgxZGM0NzRiY2UyNTBhNzQyZGVlOWEiLCJpYXQiOjE2Njk0NzAwNzJ9.SfeKB_rLf09OgMjn69ht-cf04NKXqI2i8rLhOPDtVZ0
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBldHJpIiwiaWQiOiI2MzgxZGM0NzRiY2UyNTBhNzQyZGVlOWEiLCJpYXQiOjE2NzIxNTY5NTIsImV4cCI6MTY3MjE2MDU1Mn0.QVWNBnZ0LpnGwvnfrg5BJ3X_VXTrG8-rJ0cQ1OIURew
 
 {
   "title": "body.title",

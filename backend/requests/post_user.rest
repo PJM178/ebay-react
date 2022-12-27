@@ -1,5 +1,5 @@
 ### Register user
-POST http://localhost:3003/api/users
+POST http://localhost:3003/api/auth/register
 Content-Type: application/json
 
 {
@@ -8,7 +8,7 @@ Content-Type: application/json
   "password": "testi"
 }
 ### Login User
-POST http://localhost:3003/api/login
+POST http://localhost:3003/api/auth/login
 Content-Type: application/json
 
 {

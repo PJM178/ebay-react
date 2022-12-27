@@ -14,7 +14,7 @@ const getTokenFrom = (request) => {
 
 listingsRouter.get('/', async (request, response) => {
   const listings = await Listing.find({}).populate('listedBy');
-
+  
   response.json(listings);
 });
 

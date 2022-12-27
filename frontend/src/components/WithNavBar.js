@@ -1,5 +1,5 @@
-import { Outlet } from 'react-router-dom'
-import NavBar from './NavBar'
+import { Outlet } from 'react-router-dom';
+import NavBar from './NavBar';
 
 const WithNavBar = () => {
   return (
@@ -7,7 +7,7 @@ const WithNavBar = () => {
       <NavBar />
       <Outlet />
     </>
-  )
-}
+  );
+};
 
-export default WithNavBar
+export default WithNavBar;

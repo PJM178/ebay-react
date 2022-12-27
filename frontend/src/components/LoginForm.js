@@ -1,25 +1,32 @@
-import { useNavigate } from 'react-router-dom'
-import { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { loginUser } from '../reducers/userReducer'
+import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { loginUser } from '../reducers/userReducer';
 
 const LoginForm = () => {
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
+  const dispatch = useDispatch();
+  const loggedUser = useSelector(state => state.user);
+  const navigate = useNavigate();
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleLogin = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const user = {
       username: username,
       password: password
+    };
+    dispatch(loginUser(user));
+    setUsername('');
+    setPassword('');
+    navigate('/');
+  };
+
+  useEffect(() => {
+    if (loggedUser) {
+      navigate('/');
     }
-    dispatch(loginUser(user))
-    setUsername('')
-    setPassword('')
-    navigate('/')
-  }
+  });
 
   return (
     <div>
@@ -70,7 +77,7 @@ const LoginForm = () => {
         </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default LoginForm
+export default LoginForm;

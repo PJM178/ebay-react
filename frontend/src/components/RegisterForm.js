@@ -1,7 +1,16 @@
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 const RegisterForm = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const loggedUser = useSelector(state => state.user);
+
+  useEffect(() => {
+    if (loggedUser) {
+      navigate('/');
+    }
+  });
 
   return (
     <div>
@@ -13,7 +22,7 @@ const RegisterForm = () => {
         <h2>Register</h2>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default RegisterForm
+export default RegisterForm;

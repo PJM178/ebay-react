@@ -21,24 +21,22 @@ const App = () => {
     }
   }, [dispatch]);
 
-  if (loggedUser) {
-    return (
-      <Router>
-        <Routes>
-          {/* Don't show navigation header */}
-          <Route element={<WithoutNavBar />}>
-            <Route path='/signin' element={<LoginForm />} />
-            <Route path='/register' element={<RegisterForm />} />
-          </Route>
-          {/* Show navigation header */}
-          <Route element={<WithNavBar />}>
-            <Route path='/' element={<h1>BEGINNING OF THE PROJECT</h1>} />
-            <Route path='/listings' element={<h2>Listings</h2>} />
-          </Route>
-        </Routes>
-      </Router>
-    );
-  }
+  return (
+    <Router>
+      <Routes>
+        {/* Don't show navigation header */}
+        <Route element={<WithoutNavBar />}>
+          <Route path='/signin' element={<LoginForm />} />
+          <Route path='/register' element={<RegisterForm />} />
+        </Route>
+        {/* Show navigation header */}
+        <Route element={<WithNavBar />}>
+          <Route path='/' element={<h1>BEGINNING OF THE PROJECT</h1>} />
+          <Route path='/listings' element={<h2>Listings</h2>} />
+        </Route>
+      </Routes>
+    </Router>
+  );
 };
 
 
