@@ -1,25 +1,25 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { setUser } from './reducers/userReducer'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setUser } from './reducers/userReducer';
 
-import LoginForm from './components/LoginForm'
-import RegisterForm from './components/RegisterForm'
-import WithNavBar from './components/WithNavBar'
-import WithoutNavBar from './components/WithoutNavBar'
+import LoginForm from './components/LoginForm';
+import RegisterForm from './components/RegisterForm';
+import WithNavBar from './components/WithNavBar';
+import WithoutNavBar from './components/WithoutNavBar';
 
 const App = () => {
-  const dispatch = useDispatch()
-  const loggedUser = useSelector(state => state.user)
-  console.log(loggedUser)
+  const dispatch = useDispatch();
+  const loggedUser = useSelector(state => state.user);
+  console.log(loggedUser);
 
   useEffect(() => {
-    const userStorageInfo = window.localStorage.getItem('loggedEbayUser')
+    const userStorageInfo = window.localStorage.getItem('loggedEbayUser');
     if (userStorageInfo) {
-      const user = JSON.parse(userStorageInfo)
-      dispatch(setUser(user))
+      const user = JSON.parse(userStorageInfo);
+      dispatch(setUser(user));
     }
-  }, [dispatch])
+  }, [dispatch]);
 
   if (loggedUser) {
     return (
@@ -37,9 +37,9 @@ const App = () => {
           </Route>
         </Routes>
       </Router>
-    )
+    );
   }
-}
+};
 
 
-export default App
+export default App;
