@@ -1,5 +1,5 @@
 import axios from 'axios';
-const baseUrl = '/api/blogs';
+const baseUrl = '/api/listings';
 
 let token = null;
 
@@ -11,6 +11,7 @@ const setToken = newToken => {
 // Get all listings
 const getAll = async () => {
   const response = await axios.get(baseUrl);
+
   return response.data;
 };
 

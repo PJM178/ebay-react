@@ -12,6 +12,7 @@ const getTokenFrom = (request) => {
   return null;
 };
 
+// get all listings from the database
 listingsRouter.get('/', async (request, response) => {
   const listings = await Listing.find({}).populate('listedBy');
   
