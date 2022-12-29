@@ -19,6 +19,17 @@ listingsRouter.get('/', async (request, response) => {
   response.json(listings);
 });
 
+// get a single listing
+listingsRouter.get('/:id', async (req, res) => {
+  const listing = await Listing.findById(req.params.id).populate('listedBy', { username: 1 });
+
+  if (listing) {
+    res.json(listing.toJSON());
+  } else {
+    res.status(404).end();
+  }
+});
+
 listingsRouter.post('/', async (request, response) => {
   const body = request.body;
   const token = getTokenFrom(request);

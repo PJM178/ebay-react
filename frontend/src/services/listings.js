@@ -15,6 +15,13 @@ const getAll = async () => {
   return response.data;
 };
 
+//  Get a single listing by id
+const getOne = async (id) => {
+  const response = await axios.get(`${baseUrl}/${id}`);
+
+  return response.data;
+};
+
 // New listing
 const newListing = async (newListing) => {
   const config = {
@@ -24,4 +31,4 @@ const newListing = async (newListing) => {
   return response.data;
 };
 
-export default { setToken, getAll, newListing };
+export default { setToken, getAll, newListing, getOne };

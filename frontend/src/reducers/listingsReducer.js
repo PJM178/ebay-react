@@ -2,8 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 import listingService from '../services/listings';
 
 const listingSlice = createSlice ({
-  name: 'listing',
-  initialState: null,
+  name: 'listings',
+  initialState: [],
   reducers: {
     initializeListingsAction(state, action) {
       return action.payload;
