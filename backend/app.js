@@ -44,6 +44,7 @@ app.use(cookierParser());
 app.use(cors());
 app.use(express.json());
 app.use(middleware.requestLogger);
+app.use(express.static('build'));
 
 // API endpoints
 app.use('/api/users', usersRouter);

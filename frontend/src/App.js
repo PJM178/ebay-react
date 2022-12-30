@@ -13,6 +13,8 @@ import WithoutNavBar from './components/WithoutNavBar';
 import HomePage from './components/HomePage';
 import SingleListing from './components/SingeListing';
 import AllListings from './components/AllListings';
+import AllCategories from './components/AllCategories';
+import ListingForm from './components/ListingForm';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -45,6 +47,8 @@ const App = () => {
           <Route path='/' element={<HomePage />} />
           <Route path='/listings' element={<AllListings />} />
           <Route path='/listings/:id' element={<SingleListing />} />
+          <Route path='/categories' element={<AllCategories />} />
+          <Route path='/sell' element={<ListingForm />} />
         </Route>
       </Routes>
     </Router>

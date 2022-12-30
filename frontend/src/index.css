@@ -56,3 +56,26 @@ td {
 }
 
 /* Listings - end */
+
+/* Categories page - start */
+.all-categories-container {
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 0.2rem;
+}
+
+.category-container {
+  padding: 5px;
+  flex: 48%;
+}
+
+.category-title {
+  border-bottom: 2px solid;
+}
+
+.category-subcategory-list {
+  text-align: left;
+  padding-left: 0px;
+}
+
+/* Categories page - end */

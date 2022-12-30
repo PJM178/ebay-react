@@ -53,7 +53,8 @@ authRouter.post('/login', async (request, response) => {
     id: user._id
   };
 
-  const token = jwt.sign(userForToken, process.env.SECRET, { expiresIn: 60*60 });
+  // { expiresIn: 60*60 }
+  const token = jwt.sign(userForToken, process.env.SECRET);
 
   response
     .cookie('access_token', token, {

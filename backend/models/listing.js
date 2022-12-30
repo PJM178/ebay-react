@@ -9,7 +9,7 @@ const listingSchema = new mongoose.Schema({
     type: String,
     required: true,
     enum: {
-      values: ['electronics', 'apparel', 'other'],
+      values: ['Collectibles', 'Art', 'Computers & tablets', 'Cameras & photo', 'TV, audio & surveillance'],
       message: '{VALUE} is not a valid category.'
     }
   },
