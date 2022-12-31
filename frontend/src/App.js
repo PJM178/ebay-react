@@ -15,6 +15,7 @@ import SingleListing from './components/SingeListing';
 import AllListings from './components/AllListings';
 import AllCategories from './components/AllCategories';
 import ListingForm from './components/ListingForm';
+import SubCategories from './components/SubCategories';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -49,6 +50,7 @@ const App = () => {
           <Route path='/listings/:id' element={<SingleListing />} />
           <Route path='/categories' element={<AllCategories />} />
           <Route path='/sell' element={<ListingForm />} />
+          <Route path='/categories/:id' element={<SubCategories />} />
         </Route>
       </Routes>
     </Router>
