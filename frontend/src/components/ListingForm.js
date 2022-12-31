@@ -1,13 +1,15 @@
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import listingService from '../services/listings';
+import { useDispatch } from 'react-redux';
 
 import { categories } from './Categories';
+import { newListing } from '../reducers/listingsReducer';
 
 const ListingForm = () => {
+  const dispatch = useDispatch();
   const { register, handleSubmit, watch, reset, formState, formState: { errors, isSubmitSuccessful } } = useForm();
   const onSubmit = (data) => {
-    listingService.newListing(data);
+    dispatch(newListing(data));
     console.log(data);
   };
 
@@ -27,36 +29,38 @@ const ListingForm = () => {
   console.log(categories);
 
   return (
-    <div>
+    <div className='listing-form-container'>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div>
-          <label>Title</label>
+        <div className='listing-form-field'>
+          <div><label>Title</label></div>
           <input {...register('title', { required: true })} />
           {errors.title && <span>Title is required</span>}
         </div>
-        <div>
-          <label>Category</label>
+        <div className='listing-form-field'>
+          <div><label>Category</label></div>
           <input {...register('category', { required: true })} />
           {/* <select {...register('category')}>
             <option value="jorma">female</option>
           </select> */}
           {errors.category && <span>Please choose a category</span>}
         </div>
-        <div>
-          <label>Image</label>
+        <div className='listing-form-field'>
+          <div><label>Image</label></div>
           <input {...register('image', { required: false })} />
         </div>
-        <div>
-          <label>Description</label>
+        <div className='listing-form-field'>
+          <div><label>Description</label></div>
           <input {...register('description', { required: true })} />
           {errors.description && <span>Description is required</span>}
         </div>
-        <div>
-          <label>Price</label>
+        <div className='listing-form-field'>
+          <div><label>Price</label></div>
           <input {...register('price', { required: true })} type="number" />
           {errors.price && <span>Price is required</span>}
         </div>
-        <input type="submit" />
+        <div className='listing-form-submit'>
+          <input type="submit" />
+        </div>
       </form>
     </div>
   );

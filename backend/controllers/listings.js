@@ -40,8 +40,6 @@ listingsRouter.post('/', async (request, response) => {
   }
 
   const user = await User.findById(decodedToken.id);
-  console.log(user);
-  console.log(body);
 
   const listing = new Listing({
     title: body.title,

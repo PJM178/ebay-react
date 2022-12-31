@@ -55,6 +55,26 @@ td {
   
 }
 
+/* Listing form page - start */
+.listing-form-container {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.listing-form-field {
+  padding: 0.5rem;
+}
+
+.listing-form-submit {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* Listing form page - end */
+
+
 /* Listings - end */
 
 /* Categories page - start */

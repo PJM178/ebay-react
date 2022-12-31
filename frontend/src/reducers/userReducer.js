@@ -36,6 +36,7 @@ export const loginUser = (content) => {
 
 export const setUser = (content) => {
   return async dispatch => {
+    listingService.setToken(content.token);
     dispatch(setUserAction(content));
   };
 };
