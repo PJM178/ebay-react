@@ -3,13 +3,16 @@ import listingService from '../services/listings';
 
 const listingSlice = createSlice ({
   name: 'listings',
-  initialState: [],
+  initialState: {
+    allListings: [],
+    userListings: []
+  },
   reducers: {
     initializeListingsAction(state, action) {
-      return action.payload;
+      state.allListings = action.payload;
     },
     newListingAction(state, action) {
-      state.push(action.payload);
+      state.allListings.push(action.payload);
     }
   }
 });

@@ -7,7 +7,7 @@ const SubCategories = () => {
   const location = useLocation();
   const subCategory = location.state;
 
-  const categoryListings = listings.filter(listing => listing.category === subCategory);
+  const categoryListings = listings.allListings.filter(listing => listing.category === subCategory);
   console.log(categoryListings);
 
   return (

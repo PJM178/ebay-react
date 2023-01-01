@@ -26,7 +26,7 @@ const App = () => {
   console.log(listings);
 
   useEffect(() => {
-    if (listings.length === 0) {
+    if (listings.allListings.length === 0) {
       dispatch(initializeListings());
     }
     const userStorageInfo = window.localStorage.getItem('loggedEbayUser');

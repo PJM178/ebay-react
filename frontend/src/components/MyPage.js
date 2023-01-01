@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 const MyPage = () => {
   const user = useSelector(state => state.user);
   const listings = useSelector(state => state.listings);
-  let userListings = listings.filter(listing => listing.listedBy.id === user.id);
+  let userListings = listings.allListings.filter(listing => listing.listedBy.id === user.id);
 
   if (listings.length > userListings.length) {
     console.log('jorma');
-    userListings = listings.filter(listing => listing.listedBy.id === user.id);
+    userListings = listings.allListings.filter(listing => listing.listedBy.id === user.id);
   }
 
   console.log(userListings);
