@@ -7,7 +7,7 @@ const AllListings = () => {
   console.log(listings);
 
   return (
-    <div>
+    <div className="all-listings-container">
       {listings.map(listing =>
         <div key={listing.id}  className='listing-container'>
           <Link to={`/listings/${listing.id}`}><div>Title: {listing.title}</div></Link>

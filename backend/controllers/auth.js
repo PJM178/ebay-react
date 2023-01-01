@@ -64,7 +64,7 @@ authRouter.post('/login', async (request, response) => {
       httpOnly: false
     })
     .status(200)
-    .send({ token, username: user.username, name: user.name });
+    .send({ token, username: user.username, name: user.name, id: user.id, listings: user.listings });
 });
 
 module.exports = authRouter;

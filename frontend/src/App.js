@@ -16,6 +16,7 @@ import AllListings from './components/AllListings';
 import AllCategories from './components/AllCategories';
 import ListingForm from './components/ListingForm';
 import SubCategories from './components/SubCategories';
+import MyPage from './components/MyPage';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -51,6 +52,7 @@ const App = () => {
           <Route path='/categories' element={<AllCategories />} />
           <Route path='/sell' element={<ListingForm />} />
           <Route path='/categories/:id' element={<SubCategories />} />
+          {loggedUser ? <Route path='/mypage' element={<MyPage />} /> : null}
         </Route>
       </Routes>
     </Router>

@@ -17,6 +17,7 @@ const NavBar = () => {
       <div className="nav-bar-element"><Link to='/categories'>Categories</Link></div>
       {loggedUser
         ? <div className="nav-bar-signin">
+          <div className="nav-bar-signin-element"><Link to='mypage'>My Page</Link></div>
           <div className="nav-bar-signin-element"><Link to='sell'>Sell</Link></div>
           <a className="nav-bar-signin-element" href='#' onClick={() => logout()}>Logout</a>
         </div>
