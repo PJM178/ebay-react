@@ -26,7 +26,7 @@ const App = () => {
   console.log(listings);
 
   useEffect(() => {
-    if (listings.allListings.length === 0) {
+    if (listings.length === 0) {
       dispatch(initializeListings());
     }
     const userStorageInfo = window.localStorage.getItem('loggedEbayUser');
@@ -36,27 +36,31 @@ const App = () => {
     }
   }, [dispatch]);
 
-  return (
-    <Router>
-      <Routes>
-        {/* Don't show navigation header */}
-        <Route element={<WithoutNavBar />}>
-          <Route path='/signin' element={<LoginForm />} />
-          <Route path='/register' element={<RegisterForm />} />
-        </Route>
-        {/* Show navigation header */}
-        <Route element={<WithNavBar />}>
-          <Route path='/' element={<HomePage />} />
-          <Route path='/listings' element={<AllListings />} />
-          <Route path='/listings/:id' element={<SingleListing />} />
-          <Route path='/categories' element={<AllCategories />} />
-          <Route path='/sell' element={<ListingForm />} />
-          <Route path='/categories/:id' element={<SubCategories />} />
-          {loggedUser ? <Route path='/mypage' element={<MyPage />} /> : null}
-        </Route>
-      </Routes>
-    </Router>
-  );
+  if (listings.length > 0) {
+    return (
+      <Router>
+        <Routes>
+          {/* Don't show navigation header */}
+          <Route element={<WithoutNavBar />}>
+            <Route path='/signin' element={<LoginForm />} />
+            <Route path='/register' element={<RegisterForm />} />
+          </Route>
+          {/* Show navigation header */}
+          <Route element={<WithNavBar />}>
+            <Route path='/' element={<HomePage />} />
+            <Route path='/listings' element={<AllListings />} />
+            <Route path='/listings/:id' element={<SingleListing />} />
+            <Route path='/categories' element={<AllCategories />} />
+            <Route path='/sell' element={<ListingForm />} />
+            <Route path='/categories/:id' element={<SubCategories />} />
+            {loggedUser ? <Route path='/mypage' element={<MyPage />} /> : null}
+            {/* Component to show when path is not defined */}
+            <Route path='*' element={<h1>There is nothing here...</h1>} />
+          </Route>
+        </Routes>
+      </Router>
+    );
+  }
 };
 
 

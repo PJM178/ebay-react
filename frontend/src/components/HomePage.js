@@ -8,14 +8,18 @@ const HomePage = () => {
   console.log(listings);
   const randomListingArray = [];
 
-  if (listings.allListings.length > 0) {
+  if (listings.length > 1) {
     for (let i = 0; i < 2;) {
-      let randomListing = listings.allListings[Math.floor(Math.random()*listings.allListings.length)];
+      let randomListing = listings[Math.floor(Math.random()*listings.length)];
       if (!randomListingArray.includes(randomListing)) {
         randomListingArray.push(randomListing);
         i++;
       }
     }
+  } else {
+    let randomListing = listings[Math.floor(Math.random()*listings.length)];
+    randomListingArray.push(randomListing);
+    console.log(randomListingArray);
   }
 
   console.log(randomListingArray);

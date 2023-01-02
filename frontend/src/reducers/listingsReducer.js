@@ -1,18 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
 import listingService from '../services/listings';
+import { updateUserListingsAction } from './userListingsReducer';
 
 const listingSlice = createSlice ({
   name: 'listings',
-  initialState: {
-    allListings: [],
-    userListings: []
-  },
+  initialState: [],
   reducers: {
     initializeListingsAction(state, action) {
-      state.allListings = action.payload;
+      return action.payload;
     },
     newListingAction(state, action) {
-      state.allListings.push(action.payload);
+      state.push(action.payload);
     }
   }
 });
@@ -32,6 +30,7 @@ export const newListing = (content) => {
     const newListing = await listingService.newListing(content);
     console.log(newListing);
     dispatch(newListingAction(newListing));
+    dispatch(updateUserListingsAction(newListing));
   };
 };
 
