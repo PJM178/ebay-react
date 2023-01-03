@@ -8,7 +8,8 @@ const MyPage = () => {
   const user = useSelector(state => state.user);
   const listings = useSelector(state => state.listings);
   const userListings = useSelector(state => state.userListings);
-  // const userListings = listings.filter(listing => listing.listedBy.id === user.id);
+
+  console.log(listings);
 
   useEffect(() => {
     if (userListings.length === 0) {
@@ -16,7 +17,7 @@ const MyPage = () => {
       dispatch(test(listings, user));
     }
     console.log('test');
-  }, [dispatch]);
+  }, [listings]);
 
   console.log(userListings);
 

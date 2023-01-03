@@ -28,6 +28,11 @@ export const initializeListings = () => {
 export const newListing = (content) => {
   return async dispatch => {
     const newListing = await listingService.newListing(content);
+    // populate in the request currently - maybe optimize by defining fields here
+    // const newListingUsername = {
+    //   ...newListing,
+    //   listedBy: user.username
+    // };
     console.log(newListing);
     dispatch(newListingAction(newListing));
     dispatch(updateUserListingsAction(newListing));

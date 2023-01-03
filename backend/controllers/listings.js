@@ -53,6 +53,8 @@ listingsRouter.post('/', async (request, response) => {
   user.listings = user.listings.concat(savedListing._id);
   await user.save();
 
+  await savedListing.populate('listedBy', { username: 1 });
+
   response.json(savedListing);
 });
 

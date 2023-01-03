@@ -4,12 +4,14 @@ import { useDispatch } from 'react-redux';
 
 import { categories } from './Categories';
 import { newListing } from '../reducers/listingsReducer';
+import { useSelector } from 'react-redux';
 
 const ListingForm = () => {
+  const user = useSelector(state => state.user);
   const dispatch = useDispatch();
   const { register, handleSubmit, watch, reset, formState, formState: { errors, isSubmitSuccessful } } = useForm();
   const onSubmit = (data) => {
-    dispatch(newListing(data));
+    dispatch(newListing(data, user));
     console.log(data);
   };
 
