@@ -31,11 +31,13 @@ const userSchema = new mongoose.Schema({
     },
     email: {
       type: String,
-      unique: true
+      // unique: true
+      index: { unique: true, sparse: true }
     },
     phoneNumber: {
       type: Number,
-      unique: true
+      // unique: true
+      index: { unique: true, sparse: true }
     }
   },
   passwordHash: {

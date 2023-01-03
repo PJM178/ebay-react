@@ -3,7 +3,7 @@ const registerRouter = require('express').Router();
 const User = require('../models/user');
 
 registerRouter.post('/', async (request, response) => {
-  const { username, name, password } = request.body;
+  const { username, password } = request.body;
 
   const existingUser = await User.findOne({ username });
   if (existingUser) {
@@ -23,7 +23,6 @@ registerRouter.post('/', async (request, response) => {
 
   const user = new User({
     username,
-    name,
     passwordHash
   });
 

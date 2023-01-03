@@ -34,7 +34,7 @@ const HomePage = () => {
       </div>
       <div>
         <h2>Random listings</h2>
-        {randomListingArray.length > 0
+        {randomListingArray.length > 0 && randomListingArray[0] !== undefined
           ?
           <div>
             {randomListingArray.map(listing =>

@@ -5,7 +5,7 @@ const User = require('../models/user');
 
 // register user
 authRouter.post('/register', async (request, response) => {
-  const { username, name, password } = request.body;
+  const { username, password } = request.body;
 
   const existingUser = await User.findOne({ username });
   if (existingUser) {
@@ -25,10 +25,9 @@ authRouter.post('/register', async (request, response) => {
 
   const user = new User({
     username,
-    name,
     passwordHash
   });
-
+  console.log(user);
   const savedUser = await user.save();
 
   response.status(201).json(savedUser);

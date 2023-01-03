@@ -12,6 +12,7 @@ const AllListings = () => {
       {listings.map(listing =>
         <div key={listing.id}  className='listing-container'>
           <Link to={`/listings/${listing.id}`}><div>Title: {listing.title}</div></Link>
+          <div>Listed by: {listing.listedBy.username}</div>
           <div>Category: {listing.category}</div>
           <div>Description: {listing.description}</div>
           <div>Price: {listing.price}</div>

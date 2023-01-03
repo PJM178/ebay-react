@@ -12,12 +12,16 @@ const userListingsSlice = createSlice ({
     },
     testAction(state, action) {
       const user = action.payload.user;
-      return action.payload.listings.filter(listing => listing.listedBy.id === user.id);
+      const listings = action.payload.listings;
+      return listings.filter(listing => listing.listedBy.id === user.id);
+    },
+    clearUserListingsAction() {
+      return [];
     }
   }
 });
 
-export const { initializeUserListingsAction, updateUserListingsAction, testAction } = userListingsSlice.actions;
+export const { initializeUserListingsAction, updateUserListingsAction, testAction, clearUserListingsAction } = userListingsSlice.actions;
 
 export const initializeUserListings = (filteredListings) => {
   return async dispatch => {
@@ -28,6 +32,12 @@ export const initializeUserListings = (filteredListings) => {
 export const test = (listings, user) => {
   return async dispatch => {
     dispatch(testAction({ listings, user }));
+  };
+};
+
+export const clearUserListings = () => {
+  return async dispatch => {
+    dispatch(clearUserListingsAction());
   };
 };
 

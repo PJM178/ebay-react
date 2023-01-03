@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from '../reducers/userReducer';
+import { clearUserListings } from '../reducers/userListingsReducer';
 
 const NavBar = () => {
   const dispatch = useDispatch();
@@ -8,6 +9,7 @@ const NavBar = () => {
 
   const logout = async () => {
     dispatch(logoutUser());
+    dispatch(clearUserListings());
   };
 
   return (

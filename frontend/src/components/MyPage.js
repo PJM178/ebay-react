@@ -23,6 +23,7 @@ const MyPage = () => {
   return (
     <div>
       <div className="all-listings-container">
+        <h3>My listings</h3>
         {listings.length === 0 ? <div>Oops... looks like there is nothing here</div> : null}
         {userListings.map(listing =>
           <div key={listing.id}  className='listing-container'>
